@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# Local task data
+tasks.json
+
+# Operating system files
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
