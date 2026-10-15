@@ -1,0 +1,9 @@
+[project]
+name = "agentic-ai-interview-demos"
+version = "0.1.0"
+description = "Hands-on demos for the 'Agentic AI interview' YouTube series"
+requires-python = ">=3.10"
+dependencies = [
+    "langgraph>=1.0",
+    "openai>=2.0",
+]

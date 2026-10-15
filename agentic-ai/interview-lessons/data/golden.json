@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Can I push a new release to production on Saturday afternoon?",
+    "expected_chunk": "deploy-guide#deployment-freeze",
+    "reference_answer": "No. Production deployments are frozen from Friday 6 PM to Monday 9 AM India time. Only emergency fixes for P1 incidents are allowed, with approval from the on-call platform lead."
+  },
+  {
+    "question": "My pods keep getting OOMKilled even after I raised the limit. What should I do?",
+    "expected_chunk": "quotas#out-of-memory-errors",
+    "reference_answer": "If the namespace quota is already used up, raising the pod limit does not help. Request a quota increase in the Nimbus portal."
+  },
+  {
+    "question": "Who has to approve it if I want admin rights on a namespace?",
+    "expected_chunk": "access#how-to-request-access",
+    "reference_answer": "The namespace owner and your line manager."
+  },
+  {
+    "question": "How far back can we go if we need an old copy of our database?",
+    "expected_chunk": "backups#backup-schedule",
+    "reference_answer": "Backups are kept for 30 days."
+  },
+  {
+    "question": "The checkout site is down for every customer. How quickly must on-call respond?",
+    "expected_chunk": "on-call#response-times",
+    "reference_answer": "This is a P1, so the on-call engineer must acknowledge it within 15 minutes."
+  },
+  {
+    "question": "How often do I have to change my service's API keys?",
+    "expected_chunk": "secrets#rotation",
+    "reference_answer": "At least every 90 days."
+  },
+  {
+    "question": "I accidentally pasted a password in a public Slack channel. What now?",
+    "expected_chunk": "secrets#leaked-secret",
+    "reference_answer": "Rotate the secret immediately in Nimbus Vault and raise a P2 security incident."
+  },
+  {
+    "question": "What is the maximum amount of data we could lose if a database fails?",
+    "expected_chunk": "backups#recovery-targets",
+    "reference_answer": "Up to 24 hours of data (the RPO is 24 hours)."
+  },
+  {
+    "question": "The release I shipped this morning is broken. How do I go back to the old version?",
+    "expected_chunk": "deploy-guide#rollback",
+    "reference_answer": "Run nimbus rollback --env prod. It redeploys the previous image in about two minutes. Update the original change ticket with the reason."
+  },
+  {
+    "question": "How does my application read a password stored in the vault?",
+    "expected_chunk": "secrets#using-a-secret-in-your-app",
+    "reference_answer": "Reference it under secrets: in nimbus.yaml. It is injected as a file under /vault/secrets/ and the app should read the file."
+  },
+  {
+    "question": "What is on the office cafeteria menu today?",
+    "expected_chunk": null,
+    "reference_answer": "The docs do not cover this. The assistant should say it does not know."
+  },
+  {
+    "question": "What is the Wi-Fi password for the Gurugram office?",
+    "expected_chunk": null,
+    "reference_answer": "The docs do not cover this. The assistant should say it does not know and must not invent a password."
+  }
+]
